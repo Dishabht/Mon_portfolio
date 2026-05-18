@@ -1,0 +1,395 @@
+.projectPage {
+  --accent: #00e5c0;
+  --accent-dim: rgba(0, 229, 192, 0.12);
+  --accent-border: rgba(0, 229, 192, 0.3);
+  --surface: #111211;
+  --surface-2: #181a19;
+  --surface-3: #1f2220;
+  --text-primary: #f0ede6;
+  --text-secondary: #8a9190;
+  --text-muted: #555e5c;
+  --border: rgba(255, 255, 255, 0.07);
+
+  background: var(--surface);
+  color: var(--text-primary);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  min-height: 100vh;
+  padding: 2.5rem 1.5rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ── Back nav ── */
+.backNav {
+  margin-bottom: 2.5rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.backLink:hover {
+  color: var(--accent);
+}
+
+/* ── Hero ── */
+.hero {
+  padding-bottom: 3rem;
+}
+
+.heroMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.heroDate {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--accent-border);
+  background: var(--accent-dim);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.heroTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.heroDescription {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 0 0 1.5rem;
+}
+
+/* ── Tech badges ── */
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.techBadge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  padding: 4px 11px;
+  border-radius: 4px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.techBadge:hover {
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.btnOutline {
+  background: var(--accent-dim);
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+.btnOutline:hover {
+  background: rgba(0, 229, 192, 0.2);
+  border-color: var(--accent);
+}
+
+.btnGhost {
+  background: var(--surface-3);
+  border-color: var(--border);
+  color: var(--text-secondary);
+}
+
+.btnGhost:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+}
+
+/* ── Divider ── */
+.sectionDivider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-border) 0%,
+    var(--border) 55%,
+    transparent 100%
+  );
+  margin-bottom: 3rem;
+}
+
+/* ── Body grid ── */
+.bodyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .bodyGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ── Colonne gauche ── */
+.bodyLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoSection {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.infoSection:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+  font-weight: 400;
+}
+
+.sectionIcon {
+  color: var(--accent);
+}
+
+.bodyText {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ── Colonne droite ── */
+.bodyRight {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  /* Colle la colonne droite en haut */
+  position: sticky;
+  top: 80px;
+}
+
+.mediaBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.mediaLabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── Video ── */
+.videoWrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+}
+
+.videoPlayer {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+/* ── Gallery ── */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.galleryMain {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  /* fond blanc pour les diagrammes UML */
+  background: #ffffff;
+}
+
+.galleryImg {
+  object-fit: contain;
+  padding: 12px;
+}
+
+.galleryCounter {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  background: rgba(17, 18, 17, 0.85);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+/* Titre du diagramme actif — affiché en bas à gauche */
+.diagramTitle {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  background: rgba(17, 18, 17, 0.85);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 20px;
+  max-width: 58%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity 0.3s;
+}
+
+/* Label sous chaque miniature */
+.thumbLabel {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.galleryThumb:hover .thumbLabel,
+.galleryThumbActive .thumbLabel {
+  opacity: 1;
+}
+
+/* Espace supplémentaire sous les thumbs pour le label */
+.galleryThumbs {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  padding-bottom: 22px;
+}
+
+.galleryThumb {
+  position: relative;
+  width: 68px;
+  height: 50px;
+  border-radius: 5px;
+  overflow: hidden;
+  /* fond blanc pour les miniatures aussi */
+  background: #ffffff;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.galleryThumbActive {
+  border-color: var(--accent) !important;
+}
+
+.galleryThumb:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.galleryThumbImg {
+  object-fit: contain;
+  padding: 3px;
+}
+
+/* ── Footer ── */
+.pageFooter {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.footerBack {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footerBack:hover {
+  color: var(--accent);
+}

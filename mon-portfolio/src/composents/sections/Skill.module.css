@@ -1,0 +1,130 @@
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #f0ede6;
+  letter-spacing: -0.02em;
+  margin: 0 0 3rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.in { opacity: 1 !important; transform: none !important; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+/* ── Card ── */
+.categoryCard {
+  background: rgba(24, 26, 25, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 1.5rem;
+  opacity: 0;
+  transform: translateY(32px) scale(0.96);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease,
+    border-color 0.2s;
+}
+
+.cardIn {
+  opacity: 1;
+  transform: none;
+}
+
+.categoryCard:hover { border-color: rgba(0, 229, 192, 0.2); }
+
+.categoryTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f0ede6;
+  margin: 0 0 1rem;
+}
+
+/* ── Badges ── */
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 1.25rem;
+}
+
+.skillBadge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: #8a9190;
+  background: #1f2220;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.skillBadge:hover {
+  color: #00e5c0;
+  border-color: rgba(0, 229, 192, 0.3);
+}
+
+/* ── Progress bars ── */
+.progList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1rem;
+}
+
+.progRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progLabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #555e5c;
+  min-width: 100px;
+}
+
+.progBar {
+  flex: 1;
+  height: 3px;
+  background: #1f2220;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progFill {
+  height: 100%;
+  background: #00e5c0;
+  border-radius: 2px;
+  width: 0;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progPct {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: #4a5452;
+  min-width: 28px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+}

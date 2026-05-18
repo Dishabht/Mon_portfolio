@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400&display=swap');
+
+:root {
+  --primary-accent: #00e5c0;
+  --comp-blue: #3b82f6;
+  --comp-green: #22c55e;
+  --comp-purple: #a855f7;
+  --dark-bg: #111211;
+  --dark-bg-secondary: #1f2220;
+  --text-primary: #f0ede6;
+  --text-secondary: #8a9190;
+  --text-tertiary: #4a5452;
+  --border-color: rgba(255, 255, 255, 0.07);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--dark-bg);
+  color: var(--text-primary);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar custom */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--dark-bg-secondary);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 192, 0.3);
+}
+
+
+
+
+p {
+  text-align: justify;
+  hyphens: auto; 
+}

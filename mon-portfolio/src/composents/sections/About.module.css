@@ -1,0 +1,162 @@
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ── Titre ── */
+.title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #f0ede6;
+  letter-spacing: -0.02em;
+  margin: 0 0 3rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* ── Grille ── */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ── Colonne gauche ── */
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.quote {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #a8b0ae;
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 2px solid #00e5c0;
+  background: rgba(0, 229, 192, 0.04);
+  border-radius: 0 8px 8px 0;
+  font-style: normal;
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.quote strong { color: #f0ede6; font-weight: 600; }
+
+.paragraph {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: #8a9190;
+  margin: 0;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.highlight { color: #f0ede6; font-weight: 600; font-style: normal; }
+
+/* ── Colonne droite ── */
+.cardColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.infoCard {
+  background: rgba(24, 26, 25, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 1.4rem 1.5rem;
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 0.9s ease, transform 0.9s ease, border-color 0.2s;
+}
+
+.infoCard:hover { border-color: rgba(0, 229, 192, 0.15); }
+
+/* ── État visible partagé ── */
+.in {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.cardLabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4a5452;
+  margin: 0 0 1.1rem;
+}
+
+/* ── Liste En bref ── */
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.infoItem:last-child { border-bottom: none; padding-bottom: 0; }
+.infoItem:first-child { padding-top: 0; }
+
+.infoKey {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #4a5452;
+  flex-shrink: 0;
+}
+
+.infoValue {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #f0ede6;
+  line-height: 1.4;
+  text-align: right;
+}
+
+/* ── Intérêts ── */
+.interestGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.interestItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: #8a9190;
+  padding: 6px 10px;
+  background: #1f2220;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.interestItem:hover { color: #f0ede6; border-color: rgba(255,255,255,0.1); }
+.interestEmoji { font-size: 14px; flex-shrink: 0; }
+
+@media (max-width: 768px) {
+  .content { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,210 @@
+.heroSection {
+  position: relative;
+  min-height: calc(100vh - 64px); 
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  overflow: hidden;
+}
+
+/* ── Particules canvas ── */
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Texte au dessus du canvas ── */
+.textContainer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;  
+  gap: 1.5rem;        
+  max-width: 800px;    
+}
+
+/* ── Tag dispo ── */
+.availTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #00e5c0;
+  border: 1px solid rgba(0, 229, 192, 0.3);
+  background: rgba(0, 229, 192, 0.08);
+  padding: 4px 12px;
+  border-radius: 20px;
+  width: fit-content;
+  animation: fadeDown 0.5s ease both;
+  margin: 0 auto;
+}
+
+.availTag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00e5c0;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Titre scramble ── */
+.title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #f0ede6;
+  margin: 0;
+  min-height: 1.2em;
+}
+
+.scrambleChar {
+  color: #00e5c0;
+  opacity: 0.6;
+}
+
+/* ── Sous-titre typewriter ── */
+.subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(0.82rem, 1.8vw, 0.95rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #8a9190;
+  margin: 0;
+  min-height: 1.5em;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.typedText {
+  color: #8a9190;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: #00e5c0;
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── Description ── */
+.description {
+  font-size: 1.1rem; 
+  line-height: 1.75;
+  color: #8a9190;
+  max-width: 800px; 
+  margin: 0 auto; 
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  text-align: center;
+  hyphens: auto; 
+}
+/* ── CTA ── */
+.ctaContainer {
+  display: flex;
+  justify-content: center; 
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease 0.15s, transform 0.6s ease 0.15s;
+}
+
+/* ── Visible state (partagé par desc, cta, image) ── */
+.visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 11px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  background: rgba(0, 229, 192, 0.12);
+  border: 1px solid rgba(0, 229, 192, 0.3);
+  color: #00e5c0;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btnPrimary:hover {
+  background: rgba(0, 229, 192, 0.22);
+  border-color: #00e5c0;
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 11px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  background: #1f2220;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  color: #8a9190;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btnSecondary:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #f0ede6;
+}
+
+
+
+
+
+
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .heroSection {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    gap: 2.5rem;
+  }
+  .availTag { margin: 0 auto; }
+  .description { max-width: 100%; }
+  .ctaContainer { justify-content: center; }
+  .avatarRing { width: 180px; height: 180px; }
+}
