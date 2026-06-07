@@ -1,0 +1,38 @@
+.wrapper {
+  background: var(--cream);
+  border-top: 1px solid #d5d0c6;
+  border-bottom: 1px solid #d5d0c6;
+  overflow: hidden;
+  padding: 14px 0;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: ticker 18s linear infinite;
+}
+
+.item {
+  font-family: var(--font-space), system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #bbb8b0;
+  padding: 0 20px;
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #ccc8c0;
+  flex-shrink: 0;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
