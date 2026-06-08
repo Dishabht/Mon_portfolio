@@ -1,25 +1,27 @@
 .wrapper {
-  background: var(--cream);
+  background: #eeebe4;
   border-top: 1px solid #d5d0c6;
   border-bottom: 1px solid #d5d0c6;
   overflow: hidden;
   padding: 14px 0;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
 .track {
   display: flex;
   align-items: center;
   white-space: nowrap;
-  animation: ticker 18s linear infinite;
+  animation: ticker 20s linear infinite;
 }
 
 .item {
   font-family: var(--font-space), system-ui, sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 400;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: #bbb8b0;
+  color: #b0aca4;
   padding: 0 20px;
   flex-shrink: 0;
 }
@@ -35,4 +37,10 @@
 @keyframes ticker {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
 }

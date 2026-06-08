@@ -1,85 +1,95 @@
 .hero {
-  background: var(--cream);
-  min-height: 100vh;
+  background: #eeebe4;
+  flex: 1;
+  min-height: 0;
+  position: relative;
   display: flex;
-  align-items: stretch;
-}
-
-.inner {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 120px 48px 64px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 24px;
 }
 
 .center {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  flex: 1;
-  gap: 28px;
+  gap: 32px;
 }
 
 .name {
-  font-family: var(--font-playfair), Georgia, serif;
-  font-size: 88px;
-  font-weight: 400;
-  color: var(--navy);
-  letter-spacing: -4px;
-  line-height: 1;
+  font-family: var(--font-syne), system-ui, sans-serif;
+  font-size: clamp(52px, 7vw, 80px);
+  font-weight: 800;
+  color: #2d2d3d;
+  letter-spacing: -2px;
+  line-height: 0.9;
 }
 
 .nameItalic {
   font-style: italic;
 }
 
+.nameSans {
+  font-family: var(--font-space), system-ui, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: -3px;
+}
+
 .pill {
   display: inline-flex;
   align-items: center;
-  padding: 10px 24px;
-  border: 1px solid var(--navy);
+  padding: 10px 28px;
+  border: 1px solid #2d2d3d;
   border-radius: 9999px;
   font-family: var(--font-space), system-ui, sans-serif;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--navy);
-}
-
-.meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.metaText {
-  font-family: var(--font-space), system-ui, sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 400;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #2d2d3d;
+  background: transparent;
+}
+
+.bottomLeft,
+.bottomRight {
+  position: absolute;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bottomLeft {
+  left: 48px;
+}
+
+.bottomRight {
+  right: 48px;
+  text-align: right;
+}
+
+.bottomLeft span,
+.bottomRight span {
+  font-family: var(--font-space), system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  font-style: italic;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--navy-muted);
+  color: #9a9aaa;
 }
 
 @media (max-width: 768px) {
-  .inner {
-    padding: 96px 24px 48px;
-  }
-
   .name {
-    font-size: clamp(48px, 12vw, 88px);
+    font-size: clamp(52px, 14vw, 88px);
     letter-spacing: -2px;
   }
 
-  .meta {
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
+  .bottomLeft,
+  .bottomRight {
+    display: none;
   }
 }

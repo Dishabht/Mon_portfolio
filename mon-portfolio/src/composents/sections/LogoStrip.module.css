@@ -1,0 +1,64 @@
+.wrapper {
+  background: #eeebe4;
+  padding: 28px 0;
+}
+
+.inner {
+  margin: 0 32px;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: logoScroll 20s linear infinite;
+}
+
+.set {
+  display: flex;
+  align-items: center;
+  gap: 96px;
+  padding-right: 96px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  color: #1a1a2e;
+  opacity: 0.7;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes logoScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-100% / 3)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

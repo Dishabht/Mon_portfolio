@@ -43,3 +43,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #444;
 }
+
+@keyframes logoScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

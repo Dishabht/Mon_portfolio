@@ -18,7 +18,7 @@ export default function CompetenceList() {
         <div className={styles.header}>
           <div>
             <p className={styles.headerLabel}>Démarche portfolio</p>
-            <p className={styles.headerTitle}>3 compétences · niveau confirmé</p>
+            <p className={styles.headerTitle}>3 compétences</p>
           </div>
           <p className={styles.headerRight}>Cliquer pour la démonstration</p>
         </div>
@@ -43,7 +43,7 @@ export default function CompetenceList() {
                   {comp.tags.map((tag, i) => (
                     <span
                       key={tag}
-                      className={`${styles.tag} ${i < 2 ? styles.tagWarm : styles.tagNeutral}`}
+                      className={`${styles.tag} ${styles.tagWarm}`}
                     >
                       {tag}
                     </span>

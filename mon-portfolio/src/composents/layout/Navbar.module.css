@@ -3,108 +3,63 @@
   top: 0;
   left: 0;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
   z-index: 1000;
-  /* couleur de texte par défaut utilisée par le logo et les liens */
-  --nav-text: #111;
-  background-color: rgba(238, 235, 228, 0.7);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-bottom: none;
-  transition: background 300ms ease, border-color 300ms ease, color 200ms ease;
-}
-
-.nav:hover {
-  background-color: rgba(238, 235, 228, 0.7);
-  border-bottom: none;
-}
-
-.nav > * {
-  position: relative;
-  filter: none;
-}
-
-.scrolled {
-  background-color: transparent;
-  /* sur scroll (fond beige), le texte reste noir pour contraste */
-  --nav-text: #111;
-}
-
-.dark {
-  background-color: transparent;
-  /* état 'dark' (sections sombres) -> texte blanc */
-  --nav-text: #fff;
-  border-bottom: none;
-}
-
-/* ── Structure ── */
-
-.inner {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 12px 24px;
-  height: 56px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 32px;
-  position: relative;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 48px;
+  background: rgba(238, 235, 228, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.left {
+  flex: 1;
 }
 
 .logo {
+  text-decoration: none;
   font-family: var(--font-syne), sans-serif;
   font-size: 20px;
   font-weight: 800;
-  color: var(--nav-text);
-  text-decoration: none;
+  color: #2d2d3d;
   letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+
+.center {
   position: absolute;
-  left: 24px;
-}
-
-.logoItalic {
-  font-style: italic;
-}
-
-.right {
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 32px;
-  width: auto;
-}
-
-.links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
 }
 
 .link {
-  font-family: var(--font-inter), var(--font-space), system-ui, sans-serif;
-  font-size: 15px;
+  font-family: var(--font-space), system-ui, sans-serif;
+  font-size: 14px;
   font-weight: 400;
-  color: var(--nav-text);
+  color: #2d2d3d;
   text-decoration: none;
-  letter-spacing: 0.3px;
   transition: opacity 150ms ease;
 }
 
 .link:hover {
-  opacity: 0.9;
+  opacity: 0.5;
 }
 
 @media (max-width: 640px) {
-  .inner {
+  .nav {
     padding: 0 24px;
   }
 
-  .links {
+  .right {
+    gap: 16px;
+  }
+
+  .link:not(:last-child) {
     display: none;
   }
 }
