@@ -74,7 +74,7 @@ export default function CompetencePage({
               <p className={styles.niveauDesc}>{n.description}</p>
               <div className={styles.acList}>
                 {n.acs.map((ac) => (
-                  <div key={ac.num} className={styles.acRow}>
+                  <div key={ac.num} id={`${n.id}-ac${parseInt(ac.num.replace("AC", ""))}`} className={styles.acRow}>
                     <span className={styles.acNum}>{"AC" + parseInt(ac.num.replace("AC", ""))}</span>
                     <p className={styles.acText}>{ac.texte}</p>
                   </div>

@@ -21,7 +21,7 @@ export default function APropos() {
           className={`${styles.paragraph} ${visible ? styles.in : ""}`}
           style={{ transitionDelay: "100ms" }}
         >
-          Étudiante en troisième année de BUT Informatique,
+          Je m'appelle Disha BHATIYA. Étudiante en troisième année de BUT Informatique,
           parcours Réalisation d'applications : Conception,
           Développement, Validation (RACDV) à l'IUT de Créteil-Vitry.
         </p>
@@ -54,8 +54,8 @@ export default function APropos() {
       </div>
 
       <a
-        href="/cv.pdf"
-        download="CV_BHATIYA.pdf"
+        href="/BHATIYA_CV.pdf"
+        download="BHATIYA_CV.pdf"
         className={`${styles.cvBtn} ${visible ? styles.in : ""}`}
         style={{ transitionDelay: "500ms" }}
       >

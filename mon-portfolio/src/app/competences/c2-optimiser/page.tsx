@@ -31,7 +31,6 @@ export default function C2Page() {
       num="C2"
       eyebrow="COMPÉTENCE 02 · UE5.2 / UE6.2"
       titre="Optimiser des applications"
-      sousTitre="Analyser et optimiser selon des critères de performance"
       niveaux={niveaux}
       traces={[]}
       activeNav="C2"

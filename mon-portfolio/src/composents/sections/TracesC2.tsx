@@ -1,5 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./TracesC1.module.css";
+
+interface AcLink {
+  id: string;
+  label: string;
+  type: "inter" | "conf";
+}
 
 interface Preuve {
   source: string;
@@ -7,6 +15,7 @@ interface Preuve {
   image?: string;
   imageTitre?: string;
   tag: string;
+  acLinks?: AcLink[];
 }
 
 const preuves: Preuve[] = [
@@ -17,6 +26,9 @@ const preuves: Preuve[] = [
     image: "/traces/c2/PosterArchitecture_PMoove.png",
     imageTitre: "Bases de données spécialisées · SAé 5.01",
     tag: "AC 01",
+    acLinks: [
+      { id: "conf-ac1", label: "AC1 · Confirmé", type: "conf" },
+    ],
   },
   {
     source: "Stage S6 · Smart Accountability",
@@ -25,6 +37,9 @@ const preuves: Preuve[] = [
     image: "/traces/c2/Tests.png",
     imageTitre: "Tests API & UI · Smart Accountability",
     tag: "AC 02",
+    acLinks: [
+      { id: "conf-ac2", label: "AC2 · Confirmé", type: "conf" },
+    ],
   },
   {
     source: "Stage S6 · Smart Accountability",
@@ -33,8 +48,19 @@ const preuves: Preuve[] = [
     image: "/traces/c2/responsive.png",
     imageTitre: "Interface responsive · Smart Accountability",
     tag: "AC 03",
+    acLinks: [
+      { id: "conf-ac3", label: "AC3 · Confirmé", type: "conf" },
+    ],
   },
 ];
+
+function scrollToAC(id: string) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "center" });
+  el.classList.add(styles.highlight);
+  setTimeout(() => el.classList.remove(styles.highlight), 1800);
+}
 
 export default function TracesC2() {
   return (
@@ -58,12 +84,21 @@ export default function TracesC2() {
                 ))}
               </p>
             </div>
-            <a
-              href={`#ac${preuve.tag.replace("AC ", "")}`}
-              className={styles.tag}
-            >
-              {preuve.tag}
-            </a>
+            <div>
+              {preuve.acLinks && preuve.acLinks.length > 0 && (
+                <div className={styles.acTagsRow}>
+                  {preuve.acLinks.map((link) => (
+                    <button
+                      key={link.id}
+                      className={`${styles.acTag} ${link.type === "inter" ? styles.acTagInter : styles.acTagConf}`}
+                      onClick={() => scrollToAC(link.id)}
+                    >
+                      {link.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           <div className={styles.preuveRight}>

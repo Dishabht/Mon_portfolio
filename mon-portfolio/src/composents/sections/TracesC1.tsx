@@ -1,5 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./TracesC1.module.css";
+
+interface AcLink {
+  id: string;
+  label: string;
+  type: "inter" | "conf";
+}
 
 interface Preuve {
   source: string;
@@ -9,6 +17,7 @@ interface Preuve {
   imageTitre?: string;
   tag: string;
   imageLarge?: boolean;
+  acLinks?: AcLink[];
 }
 
 const preuves: Preuve[] = [
@@ -19,6 +28,9 @@ const preuves: Preuve[] = [
     image: "/traces/c1/PosterArchitecture_PMoove.png",
     imageTitre: "Architecture microservices · SAé 5.01",
     tag: "AC 1",
+    acLinks: [
+      { id: "conf-ac1", label: "AC1 · Confirmé", type: "conf" },
+    ],
   },
   {
     source: "Stage S6 · Smart Accountability",
@@ -28,6 +40,9 @@ const preuves: Preuve[] = [
     imageTitre: "Modèle de données · Smart Accountability",
     tag: "AC 1",
     imageLarge: true,
+    acLinks: [
+      { id: "conf-ac1", label: "AC1 · Confirmé", type: "conf" },
+    ],
   },
   {
     source: "SAé 5.01",
@@ -36,6 +51,10 @@ const preuves: Preuve[] = [
     video: "/traces/c1/ClientMobile.mov",
     imageTitre: "Application mobile · SAé 5.01",
     tag: "AC 2",
+    acLinks: [
+      { id: "conf-ac1", label: "AC1 · Confirmé", type: "conf" },
+      { id: "conf-ac2", label: "AC2 · Confirmé", type: "conf" },
+    ],
   },
   {
     source: "SAé 5.01",
@@ -44,8 +63,19 @@ const preuves: Preuve[] = [
     image: "/traces/c1/dockercompose1.png",
     imageTitre: "Docker Compose · SAé 5.01",
     tag: "AC 3",
+    acLinks: [
+      { id: "conf-ac3", label: "AC3 · Confirmé", type: "conf" },
+    ],
   },
 ];
+
+function scrollToAC(id: string) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "center" });
+  el.classList.add(styles.highlight);
+  setTimeout(() => el.classList.remove(styles.highlight), 1800);
+}
 
 export default function TracesC1() {
   return (
@@ -70,12 +100,21 @@ export default function TracesC1() {
                 ))}
               </p>
             </div>
-            <a
-              href={`#ac${preuve.tag.replace("AC ", "")}`}
-              className={styles.tag}
-            >
-              {preuve.tag}
-            </a>
+            <div>
+              {preuve.acLinks && preuve.acLinks.length > 0 && (
+                <div className={styles.acTagsRow}>
+                  {preuve.acLinks.map((link) => (
+                    <button
+                      key={link.id}
+                      className={`${styles.acTag} ${link.type === "inter" ? styles.acTagInter : styles.acTagConf}`}
+                      onClick={() => scrollToAC(link.id)}
+                    >
+                      {link.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Droite */}

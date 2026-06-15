@@ -32,7 +32,6 @@ export default function C6Page() {
       num="C6"
       eyebrow="COMPÉTENCE 06 · UE5.6 / UE6.6"
       titre="Collaborer au sein d'une équipe informatique"
-      sousTitre="Manager une équipe informatique au niveau confirmé"
       niveaux={niveaux}
       traces={[]}
       activeNav="C6"
