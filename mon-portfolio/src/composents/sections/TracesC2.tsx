@@ -22,7 +22,7 @@ const preuves: Preuve[] = [
   {
     source: "SAé 5.01",
     texte:
-      "Dans le cadre de la SAÉ 5, nous avons choisi d'utiliser plusieurs bases de données spécialisées (Redis, Neo4j, MongoDB et SQL) afin d'adapter le stockage aux besoins de chaque service. Ce choix nous a permis d'anticiper les performances de l'application en limitant les temps d'accès aux données et en optimisant les traitements selon leur nature.\n\n— Utilisation de Redis pour réduire les temps d'accès aux données\n— Choix de Neo4j pour optimiser la recherche de trajets\n— Architecture microservices pour répartir la charge",
+      "Dans le cadre de la SAÉ 5, nous avons choisi d'utiliser plusieurs bases de données spécialisées (Redis, Neo4j, MongoDB et SQL) afin d'adapter le stockage aux besoins de chaque service. Ce choix nous a permis d'anticiper les performances de l'application en limitant les temps d'accès aux données et en optimisant les traitements selon leur nature.\n\n— Utilisation de Redis pour réduire les temps d'accès aux données\n— Choix de Neo4j pour optimiser la recherche de trajets",
     image: "/traces/c2/PosterArchitecture_PMoove.png",
     imageTitre: "Bases de données spécialisées · SAé 5.01",
     tag: "AC 01",
@@ -33,7 +33,7 @@ const preuves: Preuve[] = [
   {
     source: "Stage S6 · Smart Accountability",
     texte:
-      "Lors de mon stage chez Offsit, j'ai utilisé Insomnia et Selenium afin d'analyser et de valider le comportement des fonctionnalités développées. Insomnia m'a permis de tester les différentes routes de l'API et de vérifier que les données retournées correspondaient aux résultats attendus. De son côté, Selenium a été utilisé pour automatiser des scénarios de test sur l'interface web afin de vérifier le bon fonctionnement des parcours utilisateurs.\n\nCette démarche m'a permis d'observer le comportement réel du code, d'identifier d'éventuelles anomalies et de justifier le bon fonctionnement des fonctionnalités mises en place.",
+      "Lors de mon stage chez Offsit, j'ai utilisé Insomnia et Selenium afin d'analyser et de valider le comportement des fonctionnalités développées. Insomnia m'a permis de tester les différentes routes de l'API et de vérifier que les données retournées correspondaient aux résultats attendus. De son côté, Selenium a été utilisé pour automatiser des scénarios de test sur l'interface web afin de vérifier le bon fonctionnement des parcours utilisateurs.",
     image: "/traces/c2/Tests.png",
     imageTitre: "Tests API & UI · Smart Accountability",
     tag: "AC 02",
@@ -44,9 +44,20 @@ const preuves: Preuve[] = [
   {
     source: "Stage S6 · Smart Accountability",
     texte:
-      "Lors de mon stage chez Offsit, le portail de gestion de comptabilité devait être utilisable sur différents supports (ordinateur, tablette et mobile). Afin de répondre à cette exigence, j'ai choisi d'utiliser Tailwind CSS. Cette bibliothèque facilite la création d'interfaces responsives grâce à son système de classes utilitaires et m'a permis d'adapter rapidement l'affichage aux différentes tailles d'écran.\n\nCe choix répondait directement aux besoins du projet tout en simplifiant le développement de l'interface.",
+      "Lors de mon stage chez Offsit, le portail de gestion de comptabilité devait être utilisable sur différents supports (ordinateur, tablette et mobile). Afin de répondre à cette exigence, j'ai choisi d'utiliser Tailwind CSS. Cette bibliothèque facilite la création d'interfaces responsives grâce à son système de classes utilitaires et m'a permis d'adapter rapidement l'affichage aux différentes tailles d'écran.",
     image: "/traces/c2/responsive.png",
     imageTitre: "Interface responsive · Smart Accountability",
+    tag: "AC 03",
+    acLinks: [
+      { id: "conf-ac3", label: "AC3 · Confirmé", type: "conf" },
+    ],
+  },
+  {
+    source: "Stage S6 · Smart Accountability",
+    texte:
+      "Dans le cadre de mon stage chez Offsit, j'ai intégré la bibliothèque ApexCharts et Recharts pour visualiser les données de gestion des employés. Cela m'a permis d'afficher des graphiques de présence offrant ainsi une lecture claire et synthétique des données comptables aux managers.",
+    image: "/traces/c2/graphiquebiblio.png",
+    imageTitre: "Graphiques & tableaux de paie · Smart Accountability",
     tag: "AC 03",
     acLinks: [
       { id: "conf-ac3", label: "AC3 · Confirmé", type: "conf" },
@@ -79,7 +90,12 @@ export default function TracesC2() {
                 {preuve.texte.split("\n\n").map((para, i) => (
                   <span key={i}>
                     {i > 0 && <><br /><br /></>}
-                    {para}
+                    {para.split("\n").map((line, j) => (
+                      <span key={j}>
+                        {j > 0 && <br />}
+                        {line}
+                      </span>
+                    ))}
                   </span>
                 ))}
               </p>

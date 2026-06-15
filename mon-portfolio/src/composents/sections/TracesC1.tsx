@@ -47,12 +47,11 @@ const preuves: Preuve[] = [
   {
     source: "SAé 5.01",
     texte:
-      "Dans le cadre de la SAÉ 5, nous nous sommes appuyés sur une application existante dédiée à l'assistance des personnes à mobilité réduite. Après avoir analysé son fonctionnement et son architecture, nous avons développé de nouvelles fonctionnalités afin d'améliorer le service proposé.\n\nNous avons notamment mis en place un portail web permettant le suivi en temps réel des demandes d'assistance et la coordination des agents sur le terrain. Cette évolution a nécessité de comprendre les composants déjà présents afin d'intégrer les nouvelles fonctionnalités sans remettre en cause le fonctionnement existant de l'application.",
+      "Dans le cadre de la SAÉ 5, nous nous sommes appuyés sur une application existante dédiée à l'assistance des personnes à mobilité réduite. Après avoir analysé son fonctionnement et son architecture, nous avons développé de nouvelles fonctionnalités afin d'améliorer le service proposé.\n\nCela a nécessité de comprendre les composants déjà présents afin d'intégrer les nouvelles fonctionnalités sans remettre en cause le fonctionnement existant de l'application.",
     video: "/traces/c1/ClientMobile.mov",
     imageTitre: "Application mobile · SAé 5.01",
     tag: "AC 2",
     acLinks: [
-      { id: "conf-ac1", label: "AC1 · Confirmé", type: "conf" },
       { id: "conf-ac2", label: "AC2 · Confirmé", type: "conf" },
     ],
   },

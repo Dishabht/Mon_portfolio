@@ -59,6 +59,10 @@
   margin-top: 12px;
 }
 
+.preuveRowFull {
+  grid-template-columns: 1fr;
+}
+
 /* Gauche */
 .preuveLeft {
   padding: 28px 32px 24px;
