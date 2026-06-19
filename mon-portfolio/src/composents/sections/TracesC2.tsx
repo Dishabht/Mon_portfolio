@@ -22,7 +22,7 @@ const preuves: Preuve[] = [
   {
     source: "SAé 5.01",
     texte:
-      "Dans le cadre de la SAÉ 5, nous avons choisi d'utiliser plusieurs bases de données spécialisées (Redis, Neo4j, MongoDB et SQL) afin d'adapter le stockage aux besoins de chaque service. Ce choix nous a permis d'anticiper les performances de l'application en limitant les temps d'accès aux données et en optimisant les traitements selon leur nature.\n\n— Utilisation de Redis pour réduire les temps d'accès aux données\n— Choix de Neo4j pour optimiser la recherche de trajets",
+      "Dans le cadre de la SAÉ 5.01, nous avons choisi d'utiliser plusieurs bases de données spécialisées (Redis, Neo4j, MongoDB et SQL) afin d'adapter le stockage aux besoins de chaque service. Ce choix nous a permis d'anticiper les performances de l'application en limitant les temps d'accès aux données et en optimisant les traitements selon leur nature.\n\n— Utilisation de Redis pour réduire les temps d'accès aux données\n— Choix de Neo4j pour optimiser la recherche de trajets",
     image: "/traces/c2/PosterArchitecture_PMoove.png",
     imageTitre: "Bases de données spécialisées · SAé 5.01",
     tag: "AC 01",
