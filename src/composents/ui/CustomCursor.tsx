@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import styles from "./CustomCursor.module.css";
 
 export default function CustomCursor() {
+  const { pathname } = useLocation();
   const cursorRef = useRef<HTMLDivElement>(null);
   const mX = useRef(-200);
   const mY = useRef(-200);
@@ -71,6 +73,8 @@ export default function CustomCursor() {
   }, []);
 
   const isHeroPill = inHero && !onMenu;
+
+  if (pathname !== "/") return null;
 
   return (
     <div

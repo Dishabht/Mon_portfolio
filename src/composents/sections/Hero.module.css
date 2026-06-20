@@ -27,6 +27,12 @@
   color: #2d2d3d;
   letter-spacing: -2px;
   line-height: 0.9;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.nameVisible {
+  opacity: 1;
 }
 
 .pill {
