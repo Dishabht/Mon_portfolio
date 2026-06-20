@@ -20,7 +20,7 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-        <a href="/#contact" className={styles.link}>Contact</a>
+        <Link to="/#contact" className={styles.link}>Contact</Link>
       </div>
     </nav>
   );
