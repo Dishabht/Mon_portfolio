@@ -8,9 +8,9 @@ export default function Footer() {
         <div className={styles.col}>
           <p className={styles.label}>Portfolio</p>
           <nav className={styles.colLinks}>
-            <a href="/#profil" className={styles.colLink}>Profil</a>
-            <a href="/#competences-portfolio" className={styles.colLink}>Compétences</a>
-            <a href="/#contact" className={styles.colLink}>Contact</a>
+            <Link to="/#profil" className={styles.colLink}>Profil</Link>
+            <Link to="/#competences-portfolio" className={styles.colLink}>Compétences</Link>
+            <Link to="/#contact" className={styles.colLink}>Contact</Link>
           </nav>
         </div>
 

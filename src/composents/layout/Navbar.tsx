@@ -9,9 +9,9 @@ export default function Navbar() {
       </Link>
 
       <div className={styles.center}>
-        <a href="/#hero-section" className={styles.link}>Profil</a>
+        <Link to="/#hero-section" className={styles.link}>Profil</Link>
         <div className={styles.dropdown}>
-          <a href="/#competences-portfolio" className={styles.link}>Compétences</a>
+          <Link to="/#competences-portfolio" className={styles.link}>Compétences</Link>
           <div className={styles.dropdownMenu}>
             <div className={styles.dropdownInner}>
               <Link to="/competences/c1-realiser" className={styles.dropdownLink}>C1 — Réaliser</Link>
