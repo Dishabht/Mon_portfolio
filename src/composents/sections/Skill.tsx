@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useRef, useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import styles from "./Skill.module.css";
